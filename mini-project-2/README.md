@@ -60,10 +60,11 @@ To run the unit tests, use the following command:
 │   │   ├── java
 │   │   │   ├── org
 │   │   │   │   └── Alminiana
-│   │   │   │       ├── Book.java
-│   │   │   │       ├── InputValidator.java
-│   │   │   │       ├── Library.java
-│   │   │   │       └── Main.java
+│   │   │   │       └── Library
+│   │   │   │           ├── Book.java
+│   │   │   │           ├── InputValidator.java
+│   │   │   │           └── Library.java
+│   │   │   └── Main.java
 │   │   └── resources
 │   ├── test
 │   │   ├── java
