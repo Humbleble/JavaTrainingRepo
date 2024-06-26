@@ -1,4 +1,4 @@
-package org.Alminiana;
+package org.Alminiana.Classes;
 
 public class Book {
     private String title;

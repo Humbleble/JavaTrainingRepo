@@ -1,4 +1,4 @@
-package org.Alminiana;
+package org.Alminiana.Classes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,4 +54,3 @@ public class Library {
         return books.stream().anyMatch(book -> book.getISBN().equals(ISBN));
     }
 }
-

@@ -1,5 +1,9 @@
 package org.Alminiana;
 
+import org.Alminiana.Classes.Book;
+import org.Alminiana.Classes.InputValidator;
+import org.Alminiana.Classes.Library;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
