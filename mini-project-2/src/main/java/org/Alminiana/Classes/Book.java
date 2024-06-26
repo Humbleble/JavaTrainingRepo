@@ -23,6 +23,7 @@ public class Book {
         return ISBN;
     }
 
+    // Override toString to provide a formatted string representation of the book
     @Override
     public String toString() {
         return String.format("%-40s %-30s %s", title, author, ISBN);

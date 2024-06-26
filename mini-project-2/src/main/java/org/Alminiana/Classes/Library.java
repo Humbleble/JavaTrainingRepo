@@ -28,6 +28,7 @@ public class Library {
         }
     }
 
+    // Allows partial match search with title, authors, and ISBN
     public List<Book> searchBooks(String query) {
         return books.stream()
                 .filter(book -> book.getTitle().toLowerCase().contains(query.toLowerCase()) ||
@@ -40,9 +41,22 @@ public class Library {
         if (booksToDisplay.isEmpty()) {
             System.out.println("No books found.");
         } else {
-            System.out.printf("%-40s %-30s %s%n", "Title", "Author", "ISBN");
-            System.out.println("=".repeat(80));
-            booksToDisplay.forEach(System.out::println);
+            // Determine max length of attributes for formatting
+            int titleWidth = booksToDisplay.stream().mapToInt(book -> book.getTitle().length()).max().orElse(40);
+            int authorWidth = booksToDisplay.stream().mapToInt(book -> book.getAuthor().length()).max().orElse(30);
+            int isbnWidth = booksToDisplay.stream().mapToInt(book -> book.getISBN().length()).max().orElse(13);
+
+            // Ensures min width are at least as wide as the headers
+            titleWidth = Math.max(titleWidth, "Title".length());
+            authorWidth = Math.max(authorWidth, "Author".length());
+            isbnWidth = Math.max(isbnWidth, "ISBN".length());
+
+            // Adjusts the table depending on the string length of the data
+            String format = "%-" + titleWidth + "s %-" + authorWidth + "s %-" + isbnWidth + "s%n";
+
+            System.out.printf(format, "Title", "Author", "ISBN");
+            System.out.println("=".repeat(titleWidth + authorWidth + isbnWidth + 2));
+            booksToDisplay.forEach(book -> System.out.printf(format, book.getTitle(), book.getAuthor(), book.getISBN()));
         }
     }
 

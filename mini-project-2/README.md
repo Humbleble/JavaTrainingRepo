@@ -58,13 +58,13 @@ To run the unit tests, use the following command:
 ├── src
 │   ├── main
 │   │   ├── java
-│   │   │   ├── org
-│   │   │   │   └── Alminiana
-│   │   │   │       └── Library
-│   │   │   │           ├── Book.java
-│   │   │   │           ├── InputValidator.java
-│   │   │   │           └── Library.java
-│   │   │   └── Main.java
+│   │   │   └── org
+│   │   │       └── Alminiana
+│   │   │           ├── Classes
+│   │   │           │   ├── Book.java
+│   │   │           │   ├── InputValidator.java
+│   │   │           │   └── Library.java
+│   │   │           └── Main.java
 │   │   └── resources
 │   ├── test
 │   │   ├── java
