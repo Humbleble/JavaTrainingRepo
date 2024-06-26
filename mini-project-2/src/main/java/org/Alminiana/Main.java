@@ -1,5 +1,6 @@
 package org.Alminiana;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -18,12 +19,11 @@ public class Main {
             System.out.println("5. Exit");
             System.out.print("Choose an option: ");
 
-            int choice = scanner.nextInt();
-            scanner.nextLine();  // Consume newline
+            int choice = InputValidator.getValidatedChoice(scanner, 1, 5);
 
             switch (choice) {
                 case 1:
-                    System.out.print("\nEnter title: ");
+                    System.out.print("Enter title: ");
                     String title = scanner.nextLine();
                     System.out.print("Enter author: ");
                     String author = scanner.nextLine();
@@ -40,18 +40,16 @@ public class Main {
                     break;
 
                 case 3:
-                    System.out.print("Enter search query (title or author): ");
+                    System.out.print("Enter search query (title, author, or ISBN): ");
                     String query = scanner.nextLine();
                     List<Book> foundBooks = library.searchBooks(query);
-                    if (foundBooks.isEmpty()) {
-                        System.out.println("No books found.");
-                    } else {
-                        foundBooks.forEach(System.out::println);
-                    }
+                    library.displayBooks(foundBooks);
+                    pause();
                     break;
 
                 case 4:
                     library.displayAllBooks();
+                    pause();
                     break;
 
                 case 5:
@@ -65,5 +63,14 @@ public class Main {
         }
 
         scanner.close();
+    }
+
+    private static void pause() {
+        System.out.println("Press Enter to continue...");
+        try {
+            System.in.read();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

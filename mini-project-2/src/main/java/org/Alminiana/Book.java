@@ -25,10 +25,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", ISBN='" + ISBN + '\'' +
-                '}';
+        return String.format("%-40s %-30s %s", title, author, ISBN);
     }
 }
