@@ -15,7 +15,7 @@ This is a basic Library Management System implemented in Java. The system allows
 - **Book**: Represents a book with attributes such as title, author, and ISBN.
 - **Library**: Manages a collection of books, providing methods to add, remove, search, and display books.
 - **InputValidator**: Provides methods for validating user inputs.
-- **Main**: The main entry point of the application, handling user interactions.
+- **Main**: The main entry point of the application, handling user interactions. (Not in classes folder, but still considered here for documentation)
 
 ## Getting Started
 
@@ -83,7 +83,7 @@ To run the unit tests, use the following command:
 ### Removing a Book 
 1. Select the option to remove a book. 
 2. Enter the ISBN of the book to be removed. 
-3The system will confirm if the book was removed successfully or if no book was found with the provided ISBN. 
+3. The system will confirm if the book was removed successfully or if no book was found with the provided ISBN. 
 ### Searching for Books 
 1. Select the option to search for books. 
 2. Enter a search query (partial or full title, author, or ISBN). 
