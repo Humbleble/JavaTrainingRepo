@@ -1,16 +1,20 @@
 package org.Alminiana;
 
-import org.Alminiana.Classes.Book;
-import org.Alminiana.Classes.InputValidator;
-import org.Alminiana.Classes.Library;
+import org.Alminiana.model.Genre;
+import org.Alminiana.model.GenreBook;
+import org.Alminiana.service.Impl.LibraryServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+
     public static void main(String[] args) {
-        Library library = new Library();
+        LibraryServiceImpl library = new LibraryServiceImpl();
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
@@ -31,9 +35,17 @@ public class Main {
                     String title = scanner.nextLine();
                     System.out.print("Enter author: ");
                     String author = scanner.nextLine();
+                    System.out.println("Choose genre:");
+                    System.out.println("1. Fiction");
+                    System.out.println("2. Non-Fiction");
+                    System.out.println("3. Novel");
+                    System.out.println("4. History");
+                    System.out.println("5. Romance");
+                    Genre genre = InputValidator.getValidatedGenre(scanner);
                     System.out.print("Enter ISBN: ");
                     String ISBN = scanner.nextLine();
-                    Book book = new Book(title, author, ISBN);
+
+                    GenreBook book = new GenreBook(title, author, genre, ISBN);
                     library.addBook(book);
                     break;
 
@@ -46,7 +58,7 @@ public class Main {
                 case 3:
                     System.out.print("Enter search query (title, author, or ISBN): ");
                     String query = scanner.nextLine();
-                    List<Book> foundBooks = library.searchBooks(query);
+                    List<GenreBook> foundBooks = library.searchBooks(query);
                     library.displayBooks(foundBooks);
                     pause();
                     break;
@@ -58,10 +70,12 @@ public class Main {
 
                 case 5:
                     running = false;
+                    logger.info("Exiting Library Management System.");
                     System.out.println("Exiting Library Management System.");
                     break;
 
                 default:
+                    logger.warn("Invalid option chosen: " + choice);
                     System.out.println("Invalid option. Please try again.");
             }
         }
@@ -74,7 +88,7 @@ public class Main {
         try {
             System.in.read();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Error occurred while pausing.", e);
         }
     }
 }

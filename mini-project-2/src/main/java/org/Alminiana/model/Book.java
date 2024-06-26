@@ -1,4 +1,4 @@
-package org.Alminiana.Classes;
+package org.Alminiana.model;
 
 public class Book {
     private String title;
@@ -23,7 +23,6 @@ public class Book {
         return ISBN;
     }
 
-    // Override toString to provide a formatted string representation of the book
     @Override
     public String toString() {
         return String.format("%-40s %-30s %s", title, author, ISBN);
