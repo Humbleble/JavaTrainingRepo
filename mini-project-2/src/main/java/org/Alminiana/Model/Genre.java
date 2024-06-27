@@ -1,9 +1,9 @@
-package org.Alminiana.model;
+package org.Alminiana.Model;
 
 public enum Genre {
     FICTION,
     NON_FICTION,
     NOVEL,
     HISTORY,
-    ROMANCE;
+    ROMANCE
 }

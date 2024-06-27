@@ -1,8 +1,9 @@
 package org.Alminiana;
 
-import org.Alminiana.model.Book;
-import org.Alminiana.model.GenreBook;
-import org.Alminiana.service.Impl.LibraryServiceImpl;
+import org.Alminiana.Model.Genre;
+import org.Alminiana.Model.GenreBook;
+import org.Alminiana.Service.Impl.LibraryServiceImpl;
+import org.Alminiana.Service.LibraryService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +12,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryServiceImplTest {
-    private LibraryServiceImpl library;
+    private LibraryService library;
 
     @BeforeEach
     void setUp() {
@@ -20,20 +21,20 @@ class LibraryServiceImplTest {
 
     @Test
     void testAddBook() {
-        GenreBook book1 = new Book("The Wonders", "Jake Kennedy", "91287378127");
+        GenreBook book1 = new GenreBook("The Wonders", "Jake Kennedy", "91287378127", Genre.FICTION);
         library.addBook(book1);
         assertEquals(1, library.searchBooks("91287378127").size());
 
         // Attempt to add a book with the same ISBN
-        Book book2 = new Book("Synthesizer", "Alister", "91287378127");
-        library.addBook((GenreBook) book2);
+        GenreBook book2 = new GenreBook("Synthesizer", "Alister", "91287378127", Genre.NON_FICTION);
+        library.addBook(book2);
         assertEquals(1, library.searchBooks("91287378127").size());
     }
 
     @Test
     void testRemoveBook() {
-        Book book1 = new Book("The Wonders", "Jake Kennedy", "91287378127");
-        library.addBook((GenreBook) book1);
+        GenreBook book1 = new GenreBook("The Wonders", "Jake Kennedy", "91287378127", Genre.FICTION);
+        library.addBook(book1);
         library.removeBook("91287378127");
         assertEquals(0, library.searchBooks("9128").size());
 
@@ -43,10 +44,10 @@ class LibraryServiceImplTest {
 
     @Test
     void testSearchBooks() {
-        Book book1 = new Book("The Wonders", "Jake Kennedy", "91287378127");
-        Book book2 = new Book("Synthesizer", "Alister", "87183718272");
-        library.addBook((GenreBook) book1);
-        library.addBook((GenreBook) book2);
+        GenreBook book1 = new GenreBook("The Wonders", "Jake Kennedy", "91287378127", Genre.FICTION);
+        GenreBook book2 = new GenreBook("Synthesizer", "Alister", "87183718272", Genre.HISTORY);
+        library.addBook(book1);
+        library.addBook(book2);
 
         List<GenreBook> result1 = library.searchBooks("wonders");
         assertEquals(1, result1.size());
@@ -59,6 +60,12 @@ class LibraryServiceImplTest {
 
         List<GenreBook> result4 = library.searchBooks("the");
         assertEquals(2, result4.size());
+
+        List<GenreBook> result5 = library.searchBooks("fiction");
+        assertEquals(1, result5.size());
+
+        List<GenreBook> result6 = library.searchBooks("History");
+        assertEquals(1, result6.size());
     }
 
     @Test

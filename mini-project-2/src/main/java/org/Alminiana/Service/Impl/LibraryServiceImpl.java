@@ -1,55 +1,50 @@
-package org.Alminiana.service.Impl;
+package org.Alminiana.Service.Impl;
 
-import org.Alminiana.model.GenreBook;
-import org.Alminiana.service.LibraryService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.Alminiana.Model.GenreBook;
+import org.Alminiana.Service.LibraryService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class LibraryServiceImpl implements LibraryService {
-    private static final Logger logger = LoggerFactory.getLogger(LibraryServiceImpl.class);
-
     private List<GenreBook> books;
 
     public LibraryServiceImpl() {
         this.books = new ArrayList<>();
     }
 
+    @Override
     public void addBook(GenreBook book) {
         if (isDuplicateISBN(book.getISBN())) {
-            logger.error("Attempt to add duplicate ISBN: " + book.getISBN());
             System.out.println("Error: A book with ISBN " + book.getISBN() + " already exists.");
         } else {
             books.add(book);
-            logger.info("Book added: " + book.getTitle());
             System.out.println("Book added: " + book.getTitle());
         }
     }
 
+    @Override
     public void removeBook(String ISBN) {
         if (books.removeIf(book -> book.getISBN().equals(ISBN))) {
-            logger.info("Book with ISBN " + ISBN + " removed.");
             System.out.println("Book with ISBN " + ISBN + " removed.");
         } else {
-            logger.warn("Attempt to remove non-existent ISBN: " + ISBN);
             System.out.println("Error: No book found with ISBN " + ISBN);
         }
     }
 
+    @Override
     public List<GenreBook> searchBooks(String query) {
-        logger.info("Searching for books with query: " + query);
         return books.stream()
                 .filter(book -> book.getTitle().toLowerCase().contains(query.toLowerCase()) ||
                         book.getAuthor().toLowerCase().contains(query.toLowerCase()) ||
-                        book.getISBN().contains(query))
+                        book.getISBN().contains(query) ||
+                        book.getGenre().toString().toLowerCase().contains(query.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
+    @Override
     public void displayBooks(List<GenreBook> booksToDisplay) {
         if (booksToDisplay.isEmpty()) {
-            logger.info("No books found.");
             System.out.println("No books found.");
         } else {
             int titleWidth = booksToDisplay.stream().mapToInt(book -> book.getTitle().length()).max().orElse(40);
@@ -70,6 +65,7 @@ public class LibraryServiceImpl implements LibraryService {
         }
     }
 
+    @Override
     public void displayAllBooks() {
         displayBooks(books);
     }

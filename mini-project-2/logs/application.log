@@ -1,3 +1,3 @@
-2024-06-26 15:51:23 [main] INFO  org.Alminiana.service.Impl.LibraryServiceImpl - Book added: skajdhqwuhduqi
-2024-06-26 15:51:35 [main] INFO  org.Alminiana.service.Impl.LibraryServiceImpl - Searching for books with query: NOVEL
-2024-06-26 15:51:35 [main] INFO  org.Alminiana.service.Impl.LibraryServiceImpl - No books found.
+2024-06-26 15:51:23 [main] INFO  org.Alminiana.Service.Impl.LibraryServiceImpl - Book added: skajdhqwuhduqi
+2024-06-26 15:51:35 [main] INFO  org.Alminiana.Service.Impl.LibraryServiceImpl - Searching for books with query: NOVEL
+2024-06-26 15:51:35 [main] INFO  org.Alminiana.Service.Impl.LibraryServiceImpl - No books found.

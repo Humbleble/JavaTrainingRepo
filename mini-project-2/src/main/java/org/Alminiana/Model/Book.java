@@ -1,4 +1,4 @@
-package org.Alminiana.model;
+package org.Alminiana.Model;
 
 public class Book {
     private String title;

@@ -1,9 +1,9 @@
-package org.Alminiana.model;
+package org.Alminiana.Model;
 
 public class GenreBook extends Book {
     private Genre genre;
 
-    public GenreBook(String title, String author, Genre genre, String ISBN) {
+    public GenreBook(String title, String author, String ISBN, Genre genre) {
         super(title, author, ISBN);
         this.genre = genre;
     }

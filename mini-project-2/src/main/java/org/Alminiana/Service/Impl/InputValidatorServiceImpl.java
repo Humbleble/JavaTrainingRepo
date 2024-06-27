@@ -1,14 +1,13 @@
-package org.Alminiana;
+package org.Alminiana.Service.Impl;
 
-import org.Alminiana.model.Genre;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.Alminiana.Model.Genre;
 import java.util.Scanner;
+import org.Alminiana.Service.InputValidatorService;
 
-public class InputValidator {
-    private static final Logger logger = LoggerFactory.getLogger(InputValidator.class);
+public class InputValidatorServiceImpl implements InputValidatorService {
 
-    public static int getValidatedChoice(Scanner scanner, int min, int max) {
+    @Override
+    public int getValidatedChoice(Scanner scanner, int min, int max) {
         int choice = -1;
         while (true) {
             try {
@@ -16,18 +15,17 @@ public class InputValidator {
                 if (choice >= min && choice <= max) {
                     break;
                 } else {
-                    logger.warn("Invalid input: " + choice + ". Please enter a number between " + min + " and " + max);
                     System.out.printf("Invalid input. Please enter a number between %d and %d.%n", min, max);
                 }
             } catch (NumberFormatException e) {
-                logger.warn("Invalid input: not a number. Please enter a number between " + min + " and " + max);
                 System.out.printf("Invalid input. Please enter a number between %d and %d.%n", min, max);
             }
         }
         return choice;
     }
 
-    public static Genre getValidatedGenre(Scanner scanner) {
+    @Override
+    public Genre getValidatedGenre(Scanner scanner) {
         int choice = getValidatedChoice(scanner, 1, 5);
         switch (choice) {
             case 1: return Genre.FICTION;
