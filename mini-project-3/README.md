@@ -1,6 +1,6 @@
 # Basic E-Commerce Cart System
 
-This project implements a simple e-commerce cart system that allows users to add items to a cart, view the cart, and calculate the total price. The project is modularized, making it easy to maintain and extend.
+This project implements a simple e-commerce cart system that allows users to add items to a cart, view the cart, and calculate the total price.
 
 ## Features
 
