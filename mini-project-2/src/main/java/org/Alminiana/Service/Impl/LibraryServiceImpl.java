@@ -2,11 +2,15 @@ package org.Alminiana.Service.Impl;
 
 import org.Alminiana.Model.GenreBook;
 import org.Alminiana.Service.LibraryService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class LibraryServiceImpl implements LibraryService {
+    private static final Logger logger = LoggerFactory.getLogger(LibraryServiceImpl.class);
     private List<GenreBook> books;
 
     public LibraryServiceImpl() {
@@ -16,9 +20,11 @@ public class LibraryServiceImpl implements LibraryService {
     @Override
     public void addBook(GenreBook book) {
         if (isDuplicateISBN(book.getISBN())) {
+            logger.warn("Attempt to add duplicate book with ISBN: {}", book.getISBN());
             System.out.println("Error: A book with ISBN " + book.getISBN() + " already exists.");
         } else {
             books.add(book);
+            logger.info("Book added: {}", book.getTitle());
             System.out.println("Book added: " + book.getTitle());
         }
     }
@@ -26,20 +32,24 @@ public class LibraryServiceImpl implements LibraryService {
     @Override
     public void removeBook(String ISBN) {
         if (books.removeIf(book -> book.getISBN().equals(ISBN))) {
+            logger.info("Book with ISBN {} removed", ISBN);
             System.out.println("Book with ISBN " + ISBN + " removed.");
         } else {
+            logger.warn("Attempt to remove non-existent book with ISBN: {}", ISBN);
             System.out.println("Error: No book found with ISBN " + ISBN);
         }
     }
 
     @Override
     public List<GenreBook> searchBooks(String query) {
-        return books.stream()
+        List<GenreBook> result = books.stream()
                 .filter(book -> book.getTitle().toLowerCase().contains(query.toLowerCase()) ||
                         book.getAuthor().toLowerCase().contains(query.toLowerCase()) ||
                         book.getISBN().contains(query) ||
                         book.getGenre().toString().toLowerCase().contains(query.toLowerCase()))
                 .collect(Collectors.toList());
+        logger.info("Search for '{}' returned {} result(s)", query, result.size());
+        return result;
     }
 
     @Override

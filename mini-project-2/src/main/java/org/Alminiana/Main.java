@@ -6,12 +6,16 @@ import org.Alminiana.Service.Impl.InputValidatorServiceImpl;
 import org.Alminiana.Service.Impl.LibraryServiceImpl;
 import org.Alminiana.Service.InputValidatorService;
 import org.Alminiana.Service.LibraryService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+
     public static void main(String[] args) {
         LibraryService libraryService = new LibraryServiceImpl();
         InputValidatorService inputValidator = new InputValidatorServiceImpl();
@@ -57,7 +61,7 @@ public class Main {
                     break;
 
                 case 3:
-                    System.out.print("Enter search query (title, author, or ISBN): ");
+                    System.out.print("Enter search query (title, author, ISBN, or genre): ");
                     String query = scanner.nextLine();
                     List<GenreBook> foundBooks = libraryService.searchBooks(query);
                     libraryService.displayBooks(foundBooks);
@@ -71,10 +75,12 @@ public class Main {
 
                 case 5:
                     running = false;
+                    logger.info("Exiting Library Management System.");
                     System.out.println("Exiting Library Management System.");
                     break;
 
                 default:
+                    logger.warn("Invalid option selected: {}", choice);
                     System.out.println("Invalid option. Please try again.");
             }
         }
@@ -87,7 +93,7 @@ public class Main {
         try {
             System.in.read();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Error reading input", e);
         }
     }
 }
