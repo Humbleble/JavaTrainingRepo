@@ -1,0 +1,103 @@
+2024-06-27 23:22:58,251 [main] INFO : Saving receipt to file: testUser_receipt.txt
+2024-06-27 23:26:38,706 [main] INFO : Saving receipt to file: testUser_receipt.txt
+2024-06-27 23:28:57,379 [main] INFO : Saving receipt to file: testUser_receipt.txt
+2024-06-27 23:29:03,054 [main] INFO : Saving receipt to file: testUser_receipt.txt
+2024-06-27 23:29:36,946 [main] INFO : Program started.
+2024-06-27 23:29:40,594 [main] INFO : User name entered: Jek
+2024-06-27 23:29:40,599 [main] INFO : Displaying available products.
+2024-06-27 23:29:48,781 [main] INFO : Product added to cart: Headphones, Quantity: 2
+2024-06-27 23:29:51,964 [main] INFO : Displaying available products.
+2024-06-27 23:30:07,717 [main] INFO : Product added to cart: Charger, Quantity: 3
+2024-06-27 23:30:17,039 [main] INFO : Displaying cart items.
+2024-06-27 23:30:27,399 [main] INFO : Payment processed successfully.
+2024-06-27 23:30:27,400 [main] INFO : Saving receipt to file: Jek_receipt.txt
+2024-06-27 23:31:51,850 [main] INFO : Displaying available products.
+2024-06-27 23:32:56,581 [main] INFO : Product added to cart: Laptop, Quantity: 1
+2024-06-27 23:32:58,454 [main] INFO : Displaying cart items.
+2024-06-27 23:33:17,939 [main] INFO : Program started.
+2024-06-27 23:33:20,187 [main] INFO : User name entered: jek
+2024-06-27 23:33:20,192 [main] INFO : Displaying available products.
+2024-06-27 23:33:38,770 [main] INFO : Product added to cart: Smartphone, Quantity: 1
+2024-06-27 23:33:40,592 [main] INFO : Displaying cart items.
+2024-06-27 23:33:50,156 [main] INFO : Payment processed successfully.
+2024-06-27 23:33:50,157 [main] INFO : Saving receipt to file: jek_receipt.txt
+2024-06-27 23:34:01,841 [main] INFO : Program terminated.
+2024-06-27 23:34:24,303 [main] INFO : Program started.
+2024-06-27 23:34:27,501 [main] INFO : User name entered: je
+2024-06-27 23:34:27,506 [main] INFO : Displaying available products.
+2024-06-27 23:34:32,545 [main] INFO : Product added to cart: Smartphone, Quantity: 1
+2024-06-27 23:34:34,267 [main] INFO : Displaying cart items.
+2024-06-27 23:34:39,236 [main] INFO : Payment processed successfully.
+2024-06-27 23:34:39,237 [main] INFO : Saving receipt to file: je_receipt.txt
+2024-06-27 23:34:44,740 [main] INFO : Displaying available products.
+2024-06-27 23:58:16,123 [main] WARN : Invalid product ID entered: 7
+2024-06-27 23:58:18,669 [main] WARN : Invalid input format: j
+2024-06-27 23:58:23,208 [main] WARN : Invalid input format: @
+2024-06-27 23:58:25,628 [main] WARN : Invalid product ID entered: 0
+2024-06-27 23:58:30,964 [main] WARN : Invalid input format: d
+2024-06-27 23:58:34,491 [main] WARN : Invalid input format: @
+2024-06-27 23:58:39,653 [main] INFO : Product added to cart: Laptop, Quantity: 2
+2024-06-27 23:58:45,941 [main] INFO : Displaying available products.
+2024-06-27 23:59:05,624 [main] INFO : Product added to cart: Laptop, Quantity: 1
+2024-06-27 23:59:09,794 [main] INFO : Displaying available products.
+2024-06-28 00:00:04,148 [main] WARN : Invalid input format: k
+2024-06-28 00:00:07,698 [main] WARN : Invalid product ID entered: 5
+2024-06-28 00:00:14,258 [main] INFO : Product added to cart: Charger, Quantity: 1
+2024-06-28 00:00:18,879 [main] INFO : Displaying cart items.
+2024-06-28 00:18:18,926 [main] INFO : Saving receipt to file: testUser_receipt.txt
+2024-06-28 00:18:27,507 [main] INFO : Program started.
+2024-06-28 00:18:30,575 [main] INFO : User name entered: Jek
+2024-06-28 00:18:30,580 [main] INFO : Displaying available products.
+2024-06-28 00:18:33,628 [main] WARN : Invalid input format: f
+2024-06-28 00:18:40,227 [main] WARN : Invalid input format: g
+2024-06-28 00:18:47,698 [main] INFO : Product added to cart: Laptop, Quantity: 1
+2024-06-28 00:21:14,855 [main] WARN : Invalid input format: h
+2024-06-28 00:21:17,483 [main] INFO : Product added to cart: Laptop, Quantity: 3
+2024-06-28 00:21:26,581 [main] INFO : Displaying cart items.
+2024-06-28 00:21:33,944 [main] INFO : Payment processed successfully. Change: 0.03999999999996362
+2024-06-28 00:21:33,945 [main] INFO : Saving receipt to file: Jek_receipt.txt
+2024-06-28 00:21:41,009 [main] INFO : Program terminated.
+2024-06-28 00:23:16,754 [main] INFO : Program started.
+2024-06-28 00:23:18,704 [main] INFO : User name entered: jek
+2024-06-28 00:23:18,714 [main] INFO : Displaying available products.
+2024-06-28 00:23:21,013 [main] INFO : Product added to cart: Laptop, Quantity: 1
+2024-06-28 00:23:27,716 [main] INFO : Product added to cart: Smartphone, Quantity: 2
+2024-06-28 00:23:29,235 [main] INFO : Displaying cart items.
+2024-06-28 00:23:40,573 [main] INFO : Payment processed successfully. Change: 0.029999999999972715
+2024-06-28 00:23:40,573 [main] INFO : Saving receipt to file: jek_receipt.txt
+2024-06-28 00:24:04,699 [main] INFO : Displaying available products.
+2024-06-28 00:26:54,617 [main] INFO : Program started.
+2024-06-28 00:27:00,511 [main] INFO : User name entered: kek
+2024-06-28 00:27:00,517 [main] INFO : Displaying available products.
+2024-06-28 00:27:08,865 [main] INFO : Product added to cart: Cheekos, Quantity: 2
+2024-06-28 00:27:13,692 [main] INFO : Displaying cart items.
+2024-06-28 00:27:31,220 [main] INFO : Payment processed successfully. Change: 0.01999999999998181
+2024-06-28 00:27:31,221 [main] INFO : Saving receipt to file: kek_receipt.txt
+2024-06-28 00:27:53,419 [main] INFO : Displaying available products.
+2024-06-28 00:30:38,890 [main] INFO : Program started.
+2024-06-28 00:30:41,481 [main] INFO : User name entered: Jek
+2024-06-28 00:30:41,486 [main] INFO : Displaying available products.
+2024-06-28 00:30:47,621 [main] WARN : Invalid product ID entered: 6
+2024-06-28 00:30:53,842 [main] INFO : Product added to cart: Jelly Klay, Quantity: 5
+2024-06-28 00:32:01,506 [main] INFO : Product added to cart: Baenaenae, Quantity: 4
+2024-06-28 00:32:08,033 [main] INFO : Product added to cart: Cheekos, Quantity: 2
+2024-06-28 00:32:10,801 [main] INFO : Displaying cart items.
+2024-06-28 00:32:21,268 [main] WARN : Invalid input format: 1,200
+2024-06-28 00:32:25,689 [main] INFO : Payment processed successfully. Change: 146.0
+2024-06-28 00:32:25,689 [main] INFO : Saving receipt to file: Jek_receipt.txt
+2024-06-28 00:32:32,105 [main] INFO : Program terminated.
+2024-06-28 00:32:49,030 [main] INFO : Saving receipt to file: testUser_receipt.txt
+2024-06-28 00:32:54,297 [main] INFO : Saving receipt to file: testUser_receipt.txt
+2024-06-28 00:35:32,465 [main] INFO : Saving receipt to file: testUser_receipt.txt
+2024-06-28 00:35:37,785 [main] INFO : Saving receipt to file: testUser_receipt.txt
+2024-06-28 00:51:14,730 [main] INFO : Program started.
+2024-06-28 00:51:16,783 [main] INFO : User name entered: jek
+2024-06-28 00:51:16,789 [main] INFO : Displaying available products.
+2024-06-28 00:51:19,371 [main] INFO : Product added to cart: Kreetos, Quantity: 3
+2024-06-28 00:51:24,306 [main] INFO : Product added to cart: Freetos, Quantity: 1
+2024-06-28 00:51:25,654 [main] INFO : Displaying cart items.
+2024-06-28 00:51:29,490 [main] INFO : Payment processed successfully. Change: 20.339999999999918
+2024-06-28 00:51:29,491 [main] INFO : Saving receipt to file: jek_receipt.txt
+2024-06-28 00:51:46,091 [main] INFO : Program terminated.
+2024-06-28 00:52:19,763 [main] INFO : Saving receipt to file: testUser_receipt.txt
+2024-06-28 00:52:31,577 [main] INFO : Saving receipt to file: testUser_receipt.txt

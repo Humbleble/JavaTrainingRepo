@@ -1,6 +1,0 @@
-2024-06-27 09:34:36 INFO  LibraryServiceImpl:27 - Book added: jub
-2024-06-27 09:35:06 INFO  LibraryServiceImpl:27 - Book added: the world
-2024-06-27 09:35:21 INFO  LibraryServiceImpl:51 - Search for 'non_fiction' returned 1 result(s)
-2024-06-27 09:35:26 INFO  LibraryServiceImpl:51 - Search for 'fiction' returned 2 result(s)
-2024-06-27 09:35:34 INFO  LibraryServiceImpl:51 - Search for 'non' returned 1 result(s)
-2024-06-27 09:35:48 INFO  LibraryServiceImpl:35 - Book with ISBN 91273189371 removed
