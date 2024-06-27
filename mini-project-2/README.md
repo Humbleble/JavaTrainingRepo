@@ -15,7 +15,7 @@ This is a basic Library Management System implemented in Java. The system allows
 - **Book.java**: Represents a book with title, author, and ISBN.
 - **Genre.java**: Enum representing book genres.
 - **GenreBook.java**: Extends Book to include genre.
-- 
+  
 ### Service Package
 - **LibraryService.java**: Interface defining library operations.
 - **LibraryServiceImpl.java**: Implementation of LibraryService.
