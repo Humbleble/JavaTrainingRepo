@@ -19,6 +19,7 @@ public class LibraryServiceImpl implements LibraryService {
 
     @Override
     public void addBook(GenreBook book) {
+        // Validate for ISBN duplicates
         if (isDuplicateISBN(book.getISBN())) {
             logger.warn("Attempt to add duplicate book with ISBN: {}", book.getISBN());
             System.out.println("Error: A book with ISBN " + book.getISBN() + " already exists.");
@@ -43,10 +44,12 @@ public class LibraryServiceImpl implements LibraryService {
     @Override
     public List<GenreBook> searchBooks(String query) {
         List<GenreBook> result = books.stream()
+                // Filtering based on user query
                 .filter(book -> book.getTitle().toLowerCase().contains(query.toLowerCase()) ||
                         book.getAuthor().toLowerCase().contains(query.toLowerCase()) ||
                         book.getISBN().contains(query) ||
                         book.getGenre().toString().toLowerCase().contains(query.toLowerCase()))
+                // Collect filtered books to list
                 .collect(Collectors.toList());
         logger.info("Search for '{}' returned {} result(s)", query, result.size());
         return result;
