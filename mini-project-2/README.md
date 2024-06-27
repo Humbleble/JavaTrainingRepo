@@ -10,12 +10,22 @@ This is a basic Library Management System implemented in Java. The system allows
 - **Display All Books**: Display all books currently in the library in a tabular format.
 - **Input Validation**: Validate user inputs to prevent invalid operations.
 
-## Classes
-
-- **Book**: Represents a book with attributes such as title, author, and ISBN.
-- **Library**: Manages a collection of books, providing methods to add, remove, search, and display books.
-- **InputValidator**: Provides methods for validating user inputs.
-- **Main**: The main entry point of the application, handling user interactions. (Not in classes folder, but still considered here for documentation)
+## Code Structure
+# Model Package
+- **Book.java**: Represents a book with title, author, and ISBN.
+- **Genre.java**: Enum representing book genres.
+- **GenreBook.java**: Extends Book to include genre.
+- 
+# Service Package
+- **LibraryService.java**: Interface defining library operations.
+- **LibraryServiceImpl.java**: Implementation of LibraryService.
+- **InputValidatorService.java**: Interface for input validation.
+- **InputValidatorServiceImpl.java**: Implementation of InputValidatorService.
+- 
+# Main.java
+- Contains the main application logic and user interface.
+- LibraryServiceImplTest.java
+- Unit tests for LibraryServiceImpl.
 
 ## Getting Started
 
@@ -29,8 +39,8 @@ This is a basic Library Management System implemented in Java. The system allows
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/yourusername/library-management-system.git
-   cd library-management-system
+   git clone https://github.com/Humbleble/JavaTrainingRepo.git
+   cd JavaTrainingRepo
    
 2. Build the project using Maven:
 
@@ -60,18 +70,22 @@ To run the unit tests, use the following command:
 │   │   ├── java
 │   │   │   └── org
 │   │   │       └── Alminiana
-│   │   │           ├── Classes
+│   │   │           ├── Model
 │   │   │           │   ├── Book.java
-│   │   │           │   ├── InputValidator.java
-│   │   │           │   └── Library.java
-│   │   │           └── Main.java
-│   │   └── resources
-│   ├── test
-│   │   ├── java
-│   │   │   ├── org
-│   │   │   │   └── Alminiana
-│   │   │   │       └── LibraryTest.java
-│   │   └── resources
+│   │   │           │   ├── Genre.java
+│   │   │           │   └── GenreBook.java
+│   │   │           ├── Service
+│   │   │           │   ├── Impl
+│   │   │           │   │   ├── InputValidatorServiceImpl.java
+│   │   │           │   │   └── LibraryServiceImpl.java
+│   │   │           │   ├── InputValidatorService.java
+│   │   │           │   └── LibraryService.java
+│   │   │           └── Main
+│   └── test
+│       └── java
+│           └── org
+│               └── Alminiana
+│                   └── LibraryServiceImplTest.java   
 ├── pom.xml
 └── README.md
 ```
