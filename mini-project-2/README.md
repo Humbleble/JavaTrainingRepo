@@ -11,18 +11,18 @@ This is a basic Library Management System implemented in Java. The system allows
 - **Input Validation**: Validate user inputs to prevent invalid operations.
 
 ## Code Structure
-# Model Package
+### Model Package
 - **Book.java**: Represents a book with title, author, and ISBN.
 - **Genre.java**: Enum representing book genres.
 - **GenreBook.java**: Extends Book to include genre.
 - 
-# Service Package
+### Service Package
 - **LibraryService.java**: Interface defining library operations.
 - **LibraryServiceImpl.java**: Implementation of LibraryService.
 - **InputValidatorService.java**: Interface for input validation.
 - **InputValidatorServiceImpl.java**: Implementation of InputValidatorService.
 - 
-# Main.java
+### Main.java
 - Contains the main application logic and user interface.
 - LibraryServiceImplTest.java
 - Unit tests for LibraryServiceImpl.
