@@ -94,17 +94,21 @@ To run the unit tests, use the following command:
 1. Select the option to add a book. 
 2. Enter the title, author, and ISBN of the book. 
 3. The system will confirm if the book was added successfully. 
+
 ### Removing a Book 
 1. Select the option to remove a book. 
 2. Enter the ISBN of the book to be removed. 
 3. The system will confirm if the book was removed successfully or if no book was found with the provided ISBN. 
+
 ### Searching for Books 
 1. Select the option to search for books. 
 2. Enter a search query (partial or full title, author, or ISBN). 
 3. The system will display all books matching the search query. 
+
 ### Displaying All Books 
 1. Select the option to display all books. 
 2. The system will display all books currently in the library in a tabular format. 
+
 ### Exiting the System 
 1. Select the option to exit. 
 2. The system will terminate the application.
