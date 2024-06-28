@@ -3,5 +3,5 @@ package com.Alminiana.Service;
 import com.Alminiana.Model.Cart;
 
 public interface ReceiptUtilsService {
-    void saveReceipt(Cart cart, String userName);
+    void saveReceipt(Cart cart, String userName, double paymentAmount, double change);
 }

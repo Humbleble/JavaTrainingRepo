@@ -13,7 +13,8 @@ import java.util.List;
 public class ReceiptUtilsServiceImpl implements ReceiptUtilsService {
     private static final Logger logger = LoggerFactory.getLogger(ReceiptUtilsServiceImpl.class);
 
-    public void saveReceipt(Cart cart, String userName) {
+    // Save the receipt to a file
+    public void saveReceipt(Cart cart, String userName, double paymentAmount, double change) {
         String fileName = userName + "_receipt.txt";
         logger.info("Saving receipt to file: {}", fileName);
         try (FileWriter writer = new FileWriter(fileName)) {
@@ -28,11 +29,13 @@ public class ReceiptUtilsServiceImpl implements ReceiptUtilsService {
                 Product product = products.get(i);
                 int quantity = quantities.get(i);
                 double subTotal = product.getPrice() * quantity;
-                writer.write(String.format("%-3d| %-20s| ₱%-13.2f| %-9d| ₱%.2f\n", product.getId(), product.getName(), product.getPrice(), quantity, subTotal));
+                writer.write(String.format("%-3d| %-20s| $%-13.2f| %-9d| $%.2f\n", product.getId(), product.getName(), product.getPrice(), quantity, subTotal));
             }
 
             writer.write("---------------------------------------------------------------\n");
-            writer.write(String.format("Total Price: ₱%.2f\n", cart.calculateTotalPrice()));
+            writer.write(String.format("Total Price: $%.2f\n", cart.calculateTotalPrice()));
+            writer.write(String.format("Amount Paid: $%.2f\n", paymentAmount));
+            writer.write(String.format("Change: $%.2f\n", change));
         } catch (IOException e) {
             logger.error("An error occurred while saving the receipt.", e);
         }

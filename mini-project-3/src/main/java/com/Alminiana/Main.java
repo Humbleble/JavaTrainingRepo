@@ -19,12 +19,12 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         logger.info("Program started.");
 
-        // For receipt purposes
+        // Prompt user to enter their name
         System.out.print("Enter your name: ");
         String userName = scanner.nextLine();
         logger.info("User name entered: {}", userName);
 
-        // Initializing carts, products, services
+        // Initialize cart, products, and services
         Cart cart = new Cart();
         List<Product> products = ProductFactory.createProducts();
         DisplayUtilsServiceImpl displayUtils = new DisplayUtilsServiceImpl();
@@ -42,7 +42,7 @@ public class Main {
                 inputUtils.processUserInput(scanner, cart, products);
 
                 System.out.print("Would you like to buy more? (y/n): ");
-                while (addMoreItems) {
+                while (true) {
                     char buyMore = scanner.next().toLowerCase().charAt(0);
                     if (buyMore == 'y' || buyMore == 'n') {
                         if (buyMore == 'n') {
@@ -59,13 +59,12 @@ public class Main {
             displayUtils.displayCart(cart);
             inputUtils.processPayment(scanner, cart);
 
-            // Save receipt then  clear cart
-            receiptUtils.saveReceipt(cart, userName);
+            // Save receipt and clear cart
+            receiptUtils.saveReceipt(cart, userName, inputUtils.getPaymentAmount(), inputUtils.getChange());
             cart.clearCart();
 
-            System.out.print("Thank you for shopping!\n\n");
             System.out.print("Would you like to shop again? (y/n): ");
-            while (continueShopping) {
+            while (true) {
                 char shopAgain = scanner.next().toLowerCase().charAt(0);
                 if (shopAgain == 'y' || shopAgain == 'n') {
                     if (shopAgain == 'n') {

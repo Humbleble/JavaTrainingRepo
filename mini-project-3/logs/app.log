@@ -101,3 +101,27 @@
 2024-06-28 00:51:46,091 [main] INFO : Program terminated.
 2024-06-28 00:52:19,763 [main] INFO : Saving receipt to file: testUser_receipt.txt
 2024-06-28 00:52:31,577 [main] INFO : Saving receipt to file: testUser_receipt.txt
+2024-06-28 14:51:23,985 [main] INFO : Program started.
+2024-06-28 14:51:29,850 [main] INFO : User name entered: Kwerek
+2024-06-28 14:51:29,898 [main] INFO : Displaying available products.
+2024-06-28 14:51:32,989 [main] INFO : Product added to cart: Kreetos, Quantity: 5
+2024-06-28 14:51:34,198 [main] INFO : Displaying cart items.
+2024-06-28 14:51:38,015 [main] INFO : Payment processed successfully. Change: 0.5499999999999545
+2024-06-28 14:51:38,016 [main] INFO : Saving receipt to file: Kwerek_receipt.txt
+2024-06-28 14:51:41,052 [main] INFO : Program terminated.
+2024-06-28 14:53:11,393 [main] INFO : Program started.
+2024-06-28 14:53:16,473 [main] INFO : User name entered: Halo
+2024-06-28 14:53:16,478 [main] INFO : Displaying available products.
+2024-06-28 14:53:19,711 [main] INFO : Product added to cart: Kreetos, Quantity: 7
+2024-06-28 14:53:28,111 [main] INFO : Displaying cart items.
+2024-06-28 14:53:38,342 [main] INFO : Payment processed successfully. Change: 130.76999999999998
+2024-06-28 14:53:38,343 [main] INFO : Saving receipt to file: Halo_receipt.txt
+2024-06-28 14:53:43,234 [main] INFO : Program terminated.
+2024-06-28 15:52:00,754 [main] INFO : Program started.
+2024-06-28 15:52:03,168 [main] INFO : User name entered: ka
+2024-06-28 15:52:03,175 [main] INFO : Displaying available products.
+2024-06-28 15:52:05,827 [main] INFO : Product added to cart: Freetos, Quantity: 3
+2024-06-28 15:52:07,562 [main] INFO : Displaying cart items.
+2024-06-28 15:52:13,448 [main] INFO : Payment processed successfully. Change: 100.02999999999997
+2024-06-28 15:52:13,449 [main] INFO : Saving receipt to file: ka_receipt.txt
+2024-06-28 15:52:16,247 [main] INFO : Program terminated.
