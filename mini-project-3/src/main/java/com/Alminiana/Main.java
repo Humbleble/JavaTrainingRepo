@@ -19,10 +19,12 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         logger.info("Program started.");
 
+        // For receipt purposes
         System.out.print("Enter your name: ");
         String userName = scanner.nextLine();
         logger.info("User name entered: {}", userName);
 
+        // Initializing carts, products, services
         Cart cart = new Cart();
         List<Product> products = ProductFactory.createProducts();
         DisplayUtilsServiceImpl displayUtils = new DisplayUtilsServiceImpl();
@@ -36,6 +38,7 @@ public class Main {
 
             boolean addMoreItems = true;
             while (addMoreItems) {
+                // Process user input to add products to the cart
                 inputUtils.processUserInput(scanner, cart, products);
 
                 System.out.print("Would you like to buy more? (y/n): ");
@@ -52,8 +55,11 @@ public class Main {
                 }
             }
 
+            // Display cart and process payment
             displayUtils.displayCart(cart);
             inputUtils.processPayment(scanner, cart);
+
+            // Save receipt then  clear cart
             receiptUtils.saveReceipt(cart, userName);
             cart.clearCart();
 
