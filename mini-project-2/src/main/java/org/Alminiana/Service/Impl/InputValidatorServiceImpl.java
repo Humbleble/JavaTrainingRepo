@@ -6,7 +6,6 @@ import org.Alminiana.Service.InputValidatorService;
 
 public class InputValidatorServiceImpl implements InputValidatorService {
 
-    @Override
     public int getValidatedChoice(Scanner scanner, int min, int max) {
         int choice = -1;
         while (true) {
@@ -15,16 +14,17 @@ public class InputValidatorServiceImpl implements InputValidatorService {
                 if (choice >= min && choice <= max) {
                     break;
                 } else {
+                    // If the choice is out of number range
                     System.out.printf("Invalid input. Please enter a number between %d and %d.%n", min, max);
                 }
             } catch (NumberFormatException e) {
+                // If the input is not a valid integer
                 System.out.printf("Invalid input. Please enter a number between %d and %d.%n", min, max);
             }
         }
         return choice;
     }
 
-    @Override
     public Genre getValidatedGenre(Scanner scanner) {
         int choice = getValidatedChoice(scanner, 1, 5);
         switch (choice) {

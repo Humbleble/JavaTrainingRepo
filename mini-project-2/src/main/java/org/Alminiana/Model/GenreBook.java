@@ -11,9 +11,4 @@ public class GenreBook extends Book {
     public Genre getGenre() {
         return genre;
     }
-
-    @Override
-    public String toString() {
-        return String.format("%-40s %-30s %-10s %s", getTitle(), getAuthor(), genre, getISBN());
-    }
 }

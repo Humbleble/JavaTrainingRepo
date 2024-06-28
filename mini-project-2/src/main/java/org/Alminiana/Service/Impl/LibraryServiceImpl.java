@@ -17,7 +17,6 @@ public class LibraryServiceImpl implements LibraryService {
         this.books = new ArrayList<>();
     }
 
-    @Override
     public void addBook(GenreBook book) {
         // Validate for ISBN duplicates
         if (isDuplicateISBN(book.getISBN())) {
@@ -30,8 +29,8 @@ public class LibraryServiceImpl implements LibraryService {
         }
     }
 
-    @Override
     public void removeBook(String ISBN) {
+        // Check if book exists
         if (books.removeIf(book -> book.getISBN().equals(ISBN))) {
             logger.info("Book with ISBN {} removed", ISBN);
             System.out.println("Book with ISBN " + ISBN + " removed.");
@@ -41,7 +40,6 @@ public class LibraryServiceImpl implements LibraryService {
         }
     }
 
-    @Override
     public List<GenreBook> searchBooks(String query) {
         List<GenreBook> result = books.stream()
                 // Filtering based on user query
@@ -55,30 +53,34 @@ public class LibraryServiceImpl implements LibraryService {
         return result;
     }
 
-    @Override
     public void displayBooks(List<GenreBook> booksToDisplay) {
         if (booksToDisplay.isEmpty()) {
             System.out.println("No books found.");
         } else {
+            // Calculate width of each column based on string length
             int titleWidth = booksToDisplay.stream().mapToInt(book -> book.getTitle().length()).max().orElse(40);
             int authorWidth = booksToDisplay.stream().mapToInt(book -> book.getAuthor().length()).max().orElse(30);
             int genreWidth = booksToDisplay.stream().mapToInt(book -> book.getGenre().toString().length()).max().orElse(10);
             int isbnWidth = booksToDisplay.stream().mapToInt(book -> book.getISBN().length()).max().orElse(13);
 
+            // Checks if column width is as wide as header
             titleWidth = Math.max(titleWidth, "Title".length());
             authorWidth = Math.max(authorWidth, "Author".length());
             genreWidth = Math.max(genreWidth, "Genre".length());
             isbnWidth = Math.max(isbnWidth, "ISBN".length());
 
+            // Format for displaying books
             String format = "%-" + titleWidth + "s %-" + authorWidth + "s %-" + genreWidth + "s %-" + isbnWidth + "s%n";
 
+            // Prints header
             System.out.printf(format, "Title", "Author", "Genre", "ISBN");
             System.out.println("=".repeat(titleWidth + authorWidth + genreWidth + isbnWidth + 3));
+
+            // Loop printing for each book
             booksToDisplay.forEach(book -> System.out.printf(format, book.getTitle(), book.getAuthor(), book.getGenre(), book.getISBN()));
         }
     }
 
-    @Override
     public void displayAllBooks() {
         displayBooks(books);
     }

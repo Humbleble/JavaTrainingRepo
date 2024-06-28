@@ -52,12 +52,14 @@ public class Main {
 
                     GenreBook book = new GenreBook(title, author, ISBN, genre);
                     libraryService.addBook(book);
+                    pause();
                     break;
 
                 case 2:
                     System.out.print("Enter ISBN to remove: ");
                     String removeISBN = scanner.nextLine();
                     libraryService.removeBook(removeISBN);
+                    pause();
                     break;
 
                 case 3:
@@ -89,7 +91,7 @@ public class Main {
     }
 
     private static void pause() {
-        System.out.println("Press Enter to continue...");
+        System.out.println("\nPress Enter to continue...");
         try {
             System.in.read();
         } catch (IOException e) {

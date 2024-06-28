@@ -22,9 +22,4 @@ public class Book {
     public String getISBN() {
         return ISBN;
     }
-
-    @Override
-    public String toString() {
-        return String.format("%-40s %-30s %s", title, author, ISBN);
-    }
 }
